@@ -1,5 +1,9 @@
 
-let NetworkManager = imports.gi.NetworkManager;
+let NetworkManager;
+try {
+    NetworkManager = imports.gi.NetworkManager;
+} catch(ex) {}
+
 if (!NetworkManager || !NetworkManager.DeviceState) {
     NetworkManager = imports.gi.NM;
 }
